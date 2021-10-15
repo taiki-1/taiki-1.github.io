@@ -1,0 +1,19 @@
+<body>
+    
+郵便番号<input type="text" id="num">
+<button type="button" onclick="func()">自動補完</button>
+<br/>
+都道府県<input type="text" id="ken">
+<br/>
+市町村<input type="text" id="shi">
+<script src="transe_yuubin.js"></script>
+<script> 
+function func(){
+    let num = document.querySelector("#num").value;
+    num = num.replaceAll("-","");
+    console.log(num);
+    document.getElementById("ken").value = transe(num)[0];
+    document.getElementById("shi").value = transe(num)[1];
+}
+</script>
+</body>
